@@ -8,17 +8,17 @@ const questions = [
 {
     type: 'input',
     message: 'What would you like to name your Project?',
-    name: 'title' 
+    name: 'title', 
 },
 {
     type: 'input',
     message: 'Describe your application.',
-    name: 'description'
+    name: 'description',
 },
 {
     type: 'input',
     message: 'Describe your appliction instructions',
-    name: 'installation'
+    name: 'installation',
 },
 {
     type: 'list',
@@ -31,15 +31,35 @@ const questions = [
         { value: 'MPL', },
         { value: 'None', },
     ]
-}
+},
+{
+    type: 'input',
+    message: 'How would you like to test your application using command prompt?',
+    name: 'test',
+    default: 'npm test',
+},
+{
+    type: 'input',
+    message: 'Enter your email.',
+    name: 'Email',
+},
+{
+    type: 'input',
+    message: 'Enter your github username.',
+    name: 'github',
+},
 
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+// function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer.prompt(questions).then(data => {
+        fs.writeFileSync('readme.md', generateMarkdown(data))
+    })
+}
 
 // Function call to initialize app
 init();
