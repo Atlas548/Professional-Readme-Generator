@@ -25,12 +25,11 @@ const questions = [
     message: 'Please choose the licenses you want to use for your project.',
     name: 'licenses',
     choices: [
-        {
-            value: 'BSD3',
-        },
-        {
-            value: 'MIT',
-        },
+        { value: 'BSD3', },
+        { value: 'MIT', },
+        { value: 'Apache',},
+        { value: 'MPL', },
+        { value: 'None', },
     ]
 }
 
