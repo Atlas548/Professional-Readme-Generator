@@ -11,6 +11,9 @@ function renderLicenseBadge(license) {
   else if (license === 'ISC'){
     return `[!license: ISC](https://img.shields.io/badge/License-ISC-blue.svg)`
   }
+  else {
+    return ''
+  }
 }
 
 // TODO: Create a function that returns the license link
