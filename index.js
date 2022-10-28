@@ -1,8 +1,10 @@
 // TODO: Include packages needed for this application
+// Necessary Files 
 const inquirer = require('inquirer');
 const fs = require('fs');
-const { type } = require('os');
+const generateMarkdown = require('./utils/generateMarkdown');
 // TODO: Create an array of questions for user input
+// using an arrow function to prompt the questions using inqurer. 
 const questions = () => {
     return inquirer.prompt([
         {
@@ -29,11 +31,7 @@ const questions = () => {
             type: "list",
             name: "license's",
             message: "Choose which license your project will have."
-            choices: [
-                { value: "GNU" },
-                { value: "MIT" },
-                { value: "ISC" },
-                { value: "None"},
+            choices: [ { value: "GNU" }, { value: "MIT" }, { value: "ISC" }, { value: "None"},
             ]
         },
         {
@@ -52,6 +50,11 @@ const questions = () => {
             message: "Where to deploy the application",
         }
     ])
+    // Generates readme using fs & creates a readme with the github username from the questions
+    .then((data) => {
+        fs.writeFile(`${data.usergithub}.md`, generateMarkdown(data), 
+        console.log("Congrats! Your Readme has been generated."))
+    }) 
 }
 
 
