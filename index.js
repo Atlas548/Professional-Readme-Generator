@@ -50,18 +50,9 @@ const questions = () => {
             message: "Where to deploy the application",
         }
     ])
-    // Generates readme using fs & creates a readme with the github username from the questions
+    // Generates readme using fs & creates a readme with the github username from the questions; Passes data parameter's to the generateMarkdown function then console logs for the user
     .then((data) => {
         fs.writeFile(`${data.usergithub}.md`, generateMarkdown(data), 
         console.log("Congrats! Your Readme has been generated."))
     }) 
 }
-
-
-
-// // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
-// // TODO: Create a function to initialize app
-// function init() {}
-// // Function call to initialize app
-// init();
