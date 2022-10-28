@@ -30,6 +30,11 @@ function generateMarkdown(data) {
 
   ${renderLicenseBadge(data.license)}
 
+  ${data.name}
+
+  ## Table of Contents
+    * [Description] (#appdescription)
+    * 
 `;
 }
 
