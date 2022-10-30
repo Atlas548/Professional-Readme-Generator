@@ -29,10 +29,9 @@ const questions = () => {
         },
         {
             type: "list",
-            name: "license's",
-            message: "Choose which license your project will have."
-            choices: [ { value: "GNU" }, { value: "MIT" }, { value: "ISC" }, { value: "None"},
-            ]
+            name: "license",
+            message: "Choose which license your project will have.",
+            choices: ['GNU', 'MIT', 'ISC', 'None'],
         },
         {
             type: "input",
@@ -56,3 +55,5 @@ const questions = () => {
         console.log("Congrats! Your Readme has been generated."))
     }) 
 }
+
+questions ();

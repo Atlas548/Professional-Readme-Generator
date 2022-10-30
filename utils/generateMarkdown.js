@@ -54,17 +54,20 @@ ${renderLicenseBadge(data.license)}
 
 ## Description 📝
 
-${data.description}
+${data.appdescription}
 
 ## Installation 🔧
 
 ${data.installation}
+${data.deployapplication}
 
 ${renderLicenseSection(data.license)}
 
-## Test 📈
+## Testing 📈
 
-* Run command ${data.test} to test the application.
+*${data.usertesting}.
+
+* Run command ${data.applicationtesting} to test the application.
 
 ## Questions ❔
 
