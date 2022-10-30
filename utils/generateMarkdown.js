@@ -46,27 +46,27 @@ ${renderLicenseBadge(data.license)}
 
 ## Table of Contents
 
-* [Description](#description)
-* [Installation](#installation)
+* [Description](#description 📝 )
+* [Installation](#installation 🔧 )
 * ${renderLicenseLink(data.license)}
-* [Test](#test)
-* [Questions](#questions)
+* [Test](#test 📈 )
+* [Questions](#questions ❔)
 
-## Description
+## Description 📝
 
 ${data.description}
 
-## Installation
+## Installation 🔧
 
 ${data.installation}
 
 ${renderLicenseSection(data.license)}
 
-## Test
+## Test 📈
 
 * Run command ${data.test} to test the application.
 
-## Questions
+## Questions ❔
 
 * Any questions or concerns regarding the application please contact me via email at ${data.useremail}
 * Link to my GitHub portfolio to view my work at [${data.usergithub}](https://github.com/${data.usergithub}/).
