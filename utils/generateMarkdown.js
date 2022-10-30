@@ -58,13 +58,19 @@ ${data.description}
 
 ## Installation
 
-  ${renderLicenseBadge(data.license)}
+${data.installation}
 
-  ${data.name}
+${renderLicenseSection(data.license)}
 
-  ## Table of Contents
-    * [Description] (#appdescription)
-    * 
+## Test
+
+* Run command ${data.test} to test the application.
+
+## Questions
+
+* Any questions or concerns regarding the application please contact me via email at ${data.useremail}
+* Link to my GitHub portfolio to view my work at [${data.usergithub}](https://github.com/${data.usergithub}/).
+
 `;
 }
 
