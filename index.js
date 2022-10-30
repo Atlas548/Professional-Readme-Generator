@@ -1,65 +1,58 @@
 // TODO: Include packages needed for this application
-const inquirer = require("inquirer");
+// Necessary Files 
+const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
-
 // TODO: Create an array of questions for user input
-const questions = [
-{
-    type: 'input',
-    message: 'What would you like to name your Project?',
-    name: 'title', 
-},
-{
-    type: 'input',
-    message: 'Describe your application.',
-    name: 'description',
-},
-{
-    type: 'input',
-    message: 'Describe your appliction instructions',
-    name: 'installation',
-},
-{
-    type: 'list',
-    message: 'Please choose the licenses you want to use for your project.',
-    name: 'licenses',
-    choices: [
-        { value: 'BSD3', },
-        { value: 'MIT', },
-        { value: 'Apache',},
-        { value: 'MPL', },
-        { value: 'None', },
-    ]
-},
-{
-    type: 'input',
-    message: 'How would you like to test your application using command prompt?',
-    name: 'test',
-    default: 'npm test',
-},
-{
-    type: 'input',
-    message: 'Enter your email.',
-    name: 'Email',
-},
-{
-    type: 'input',
-    message: 'Enter your github username.',
-    name: 'github',
-},
-
-];
-
-// TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
-
-// TODO: Create a function to initialize app
-function init() {
-    inquirer.prompt(questions).then(data => {
-        fs.writeFileSync('readme.md', generateMarkdown(data))
-    })
+// using an arrow function to prompt the questions using inqurer. 
+const questions = () => {
+    return inquirer.prompt([
+        {
+            type: "input",
+            name: "apptitle",
+            message: "Enter the name of your application."
+        },
+        {
+            type: "input",
+            name: "appdescription",
+            message: "Describe your application.",
+        },
+        {
+            type: "input",
+            name: "useremail",
+            message: "Enter your email.",
+        },
+        {
+            type: "input",
+            name: "usergithub",
+            message: "Enter your GitHub username.",
+        },
+        {
+            type: "list",
+            name: "license's",
+            message: "Choose which license your project will have."
+            choices: [ { value: "GNU" }, { value: "MIT" }, { value: "ISC" }, { value: "None"},
+            ]
+        },
+        {
+            type: "input",
+            name: "applicationtesting",
+            message: "How do you want to test your application",
+        },
+        {
+            type: "input",
+            name: "usertesting",
+            message: "How & what information does the user need to know in order to use the repo ",
+        },
+        {
+            type: "input",
+            name: "deployapplication",
+            message: "Where to deploy the application",
+        }
+    ])
+    // Generates readme using fs & creates a readme with the github username from the questions; Passes data parameter's to the generateMarkdown function then console logs for the user
+    .then((data) => {
+        fs.writeFile(`${data.usergithub}.md`, generateMarkdown(data), 
+        console.log("Congrats! Your Readme has been generated."))
+    }) 
 }
-
-// Function call to initialize app
-init();
