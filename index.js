@@ -5,8 +5,7 @@ const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
 // TODO: Create an array of questions for user input
 // using an arrow function to prompt the questions using inqurer. 
-const questions = () => {
-    return inquirer.prompt([
+const questions = [
         {
             type: "input",
             name: "apptitle",
@@ -48,12 +47,13 @@ const questions = () => {
             name: "deployapplication",
             message: "Where to deploy the application",
         }
-    ])
+    ]
     // Generates readme using fs & creates a readme with the github username from the questions; Passes data parameter's to the generateMarkdown function then console logs for the user
-    .then((data) => {
-        fs.writeFile(`${data.usergithub}.md`, generateMarkdown(data), 
-        console.log("Congrats! Your Readme has been generated."))
-    }) 
-}
+    function init () {
+        inquirer.prompt(questions).then(Data => {
+            fs.writeFileSync('readme.md', generateMarkdown(Data))
+        })
+    }
 
-questions ();
+init ();
+
