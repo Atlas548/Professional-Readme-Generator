@@ -51,7 +51,8 @@ const questions = [
     // Generates readme using fs & creates a readme with the github username from the questions; Passes data parameter's to the generateMarkdown function then console logs for the user
     function init () {
         inquirer.prompt(questions).then(Data => {
-            fs.writeFileSync('readme.md', generateMarkdown(Data))
+            fs.writeFileSync('readme.md', generateMarkdown(Data));
+            console.log("Generating readme.......");
         })
     }
 
