@@ -2,13 +2,13 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
     if (license === 'GNU') {
-        return `[![license: GPL v3] (https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`
+        return `![license: GPL v3] (https://img.shields.io/badge/License-GPLv3-blue.svg)(https://www.gnu.org/licenses/gpl-3.0)`
     }
     else if (license === 'MIT') {
-        return `[![license: MIT] (https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`
+        return `![license: MIT] (https://img.shields.io/badge/License-MIT-yellow.svg)(https://opensource.org/licenses/MIT)`
     }
     else if (license === 'ISC') {
-        return `[!license: ISC] (https://img.shields.io/badge/License-ISC-blue.svg)`
+        return `![license: ISC] (https://img.shields.io/badge/License-ISC-blue.svg)`
     }
 }
 

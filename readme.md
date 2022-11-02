@@ -1,34 +1,17 @@
-# Answer-Name
-[!license: ISC] (https://img.shields.io/badge/License-ISC-blue.svg)
+# Readme Generator by Tyler Oates
 
-## Table of Contents
+## Description
 
-* Description 📝 
-* Installation 🔧 
-* License 📔
-* Test 📈 
-* Questions ❔
+* Intent was to enable the user to generate a comprehensive readme via Node. User's are prompted to specific questions and uses that data to generate their readme.
 
-## Description 📝
+![Demo Gif](assets/Readmegif.gif)
 
-Answer-Description
+## Begin Program
 
-## Installation 🔧
+* node index.js in the command prompt
 
-Answer-Deploying Application
+## Author
 
-## License
-    
-    Licensed under ISC license.
-
-## Testing 📈
-
-*Answer-Information.
-
-* Run command Answer-Testing Application to test the application.
-
-## Questions ❔
-
-* Any questions or concerns regarding the application please contact me via email at Answer-Email@gmail.com
-* Link to my GitHub portfolio to view my work at [Answer-Github Username](https://github.com/Answer-Github Username/).
-
+* Tyler Oates
+* Email: oatesrotc548@gmail.com
+* GitHub: https://github.com/Atlas548
